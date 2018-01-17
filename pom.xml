@@ -4,21 +4,21 @@
 	<groupId>org.bgee.log4jdbc-log4j2</groupId>
 	<artifactId>log4jdbc-log4j2</artifactId>
 	<packaging>pom</packaging>
-	<version>1.17-SNAPSHOT</version>
+	<version>1.71.1-airbnb</version>
 	<name>log4jdbc-log4j2</name>
-	
+
 	<parent>
         <groupId>org.sonatype.oss</groupId>
         <artifactId>oss-parent</artifactId>
         <version>7</version>
     </parent>
-	
+
 	<modules>
 		<module>log4jdbc-log4j2-jdbc4.1</module>
 		<module>log4jdbc-log4j2-jdbc4</module>
         <module>log4jdbc-log4j2-jdbc3</module>
 	</modules>
-	
+
 	<url>http://code.google.com/p/log4jdbc-log4j2/</url>
 	<description>A modification of log4jdbc to natively use Log4j 2 (or SLF4J as usual), that supports from JDBC 4.1 to JDBC 3, includes all the improvements of log4jdbc-remix, and provides new improvements on its own.</description>
 	<licenses>
@@ -111,11 +111,11 @@
 
 		</dependencies>
 	</dependencyManagement>
-	
+
 	<build>
         <plugins>
-            <!-- In order to have each test class run into its own JVM 
-                 (many properties are initialized only at class loading, 
+            <!-- In order to have each test class run into its own JVM
+                 (many properties are initialized only at class loading,
                  so we need a different ClassLoader for each test class) -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -125,9 +125,9 @@
                         <forkCount>1</forkCount>
                         <reuseForks>false</reuseForks>
                 </configuration>
-                
+
                   <executions>
-                   
+
                     <!-- Regular execution, where all libraries are available -->
                     <execution>
                       <id>default-test</id>
@@ -141,8 +141,8 @@
                         </excludes>
                       </configuration>
                     </execution>
-                    
-                    <!-- Test when a logging library is missing (more like an integration test, 
+
+                    <!-- Test when a logging library is missing (more like an integration test,
                          but simple enough to be handled here) -->
                     <execution>
                       <id>it-test</id>
@@ -162,13 +162,13 @@
                         </classpathDependencyExcludes>
                       </configuration>
                     </execution>
-                    
+
                 </executions>
           </plugin>
       </plugins>
-  </build> 
-  
-  <!-- Actions to perform only for official releases, 
+  </build>
+
+  <!-- Actions to perform only for official releases,
        profile for performRelease=true (e.g., when running: mvn release:perform) -->
   <profiles>
       <profile>

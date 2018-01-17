@@ -1,18 +1,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  
+
   <parent>
     <groupId>org.bgee.log4jdbc-log4j2</groupId>
     <artifactId>log4jdbc-log4j2</artifactId>
-    <version>1.17-SNAPSHOT</version>
+    <version>1.71.1-airbnb</version>
   </parent>
-  
+
   <artifactId>log4jdbc-log4j2-jdbc4</artifactId>
   <packaging>jar</packaging>
   <name>log4jdbc-log4j2-jdbc4</name>
-  
+
   <dependencies>
-  
+
   </dependencies>
 
   <!-- in order to compile with JDK 1.6 -->
@@ -27,17 +27,17 @@
                   <target>1.6</target>
                   <compilerVersion>1.6</compilerVersion>
                   <fork>true</fork>
-                  <!-- 
-                  You need to set up the path to a JDK 1.6 in the Maven settings.xml file, 
+                  <!--
+                  You need to set up the path to a JDK 1.6 in the Maven settings.xml file,
                   as explained here: https://maven.apache.org/plugins/maven-compiler-plugin/examples/compile-using-different-jdk.html
-                  For instance: 
+                  For instance:
                        <profile>
                          <id>compiler</id>
                            <properties>
                              <JAVA_1_6_HOME>/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home</JAVA_1_6_HOME>
                              <JAVA_1_6_BOOTCLASSPATH>/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar</JAVA_1_6_BOOTCLASSPATH>
                            </properties>
-                       </profile> 
+                       </profile>
                        [...]
                        <activeProfiles>
                          <activeProfile>compiler</activeProfile>
@@ -48,7 +48,7 @@
                   <verbose>true</verbose>
               </configuration>
           </plugin>
-          
+
           <plugin>
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-surefire-plugin</artifactId>
@@ -58,6 +58,6 @@
           </plugin>
       </plugins>
       <finalName>log4jdbc-log4j2-jdbc4-${project.version}</finalName>
-  </build>  
-  
+  </build>
+
 </project>
